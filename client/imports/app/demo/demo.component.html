@@ -1,5 +1,13 @@
-<h2>Demo template</h2>
 
-This is the available data:
-<br>
-<a [routerLink]="['/login']">Login</a>
+<div *ngIf="isValid; else elseBlock">Text to show</div>
+<ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>
+
+ 
+
+ <div>
+     <ul>
+         <li *ngIf="!currentUser" ><a [routerLink]="['/login']">Login</a></li>
+         <li *ngIf="!currentUser" ><a [routerLink]="['/signup']">Signup</a></li>
+         <li *ngIf="currentUser" ><a [routerLink]="['/logout']">Logout</a></li>
+     </ul>
+ </div>

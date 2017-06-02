@@ -1,11 +1,13 @@
 import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from '@angular/router';
 import { AppComponent } from "./app.component";
 import { DemoComponent } from "./demo/demo.component";
 import { LoginComponent } from "./authentication/login/login.component";
+import { SignupComponent } from "./authentication/signup/signup.component";
 import { DemoDataService } from "./demo/demo-data.service";
 import { MessageComponent } from "./message/message.component";
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { routes } from './app.routes';
 
 @NgModule({
@@ -14,7 +16,8 @@ import { routes } from './app.routes';
     AppComponent,
     MessageComponent,
     DemoComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   // Entry Components
   entryComponents: [
@@ -26,7 +29,9 @@ import { routes } from './app.routes';
   ],
   // Modules
   imports: [
+
     BrowserModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
   // Main Component

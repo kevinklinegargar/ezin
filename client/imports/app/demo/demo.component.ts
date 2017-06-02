@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit,TemplateRef } from "@angular/core";
 import { Observable } from "rxjs";
 import { DemoDataService } from "./demo-data.service";
 import { Demo } from "../../../../both/models/demo.model";
@@ -13,6 +13,7 @@ import style from "./demo.component.scss";
 export class DemoComponent implements OnInit {
   greeting: string;
   data: Observable<Demo[]>;
+  isValid = false;
 
   constructor(private demoDataService: DemoDataService) {
     this.greeting = "Hello Demo Component!";
