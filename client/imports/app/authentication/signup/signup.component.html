@@ -1,8 +1,33 @@
-<div>
-    <h2>Register</h2>
-    <form [formGroup]="signupForm" (ngSubmit)="doSignup($event)">
-        <input formControlName="email" type="email" placeholder="Your email">
-        <input formControlName="password" type="password" placeholder="Your password">
-    <button type="submit">Log in</button>
-    </form>
-</div>
+
+<div class="row">
+		<form class="col s12" [formGroup]="signupForm" (ngSubmit)="doSignup(signupForm)">
+			<div class="row">
+				<div class="input-field col s6">
+					<input id="username" formControlName="username" type="text" class="validate">
+					<label for="username">Username</label>
+					<div class="error" >{{signupForm.get('confirmPassword').hasError('MatchPassword')}}</div>
+				</div>
+				<div class="input-field col s6">
+					<input id="email" formControlName="email" type="text" class="validate">
+					<label for="email">Email</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="password" formControlName="password" type="password" class="validate">
+					<label for="password">Password</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="confirm-password" formControlName="confirmPassword" type="password" class="validate">
+					<label for="validate-password">Confirm Password</label>
+				</div>
+			</div>
+            <div class="row">
+                <button class="btn waves-effect waves-light" [disabled]="!signupForm.valid" type="submit" name="action">Signup
+                    <i class="material-icons right"></i>
+                </button>
+            </div>
+		</form>
+	</div>

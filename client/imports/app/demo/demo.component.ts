@@ -21,5 +21,6 @@ export class DemoComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.demoDataService.getData().zone();
+   
   }
 }

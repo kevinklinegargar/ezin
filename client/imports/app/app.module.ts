@@ -1,12 +1,13 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from '@angular/router';
 import { AppComponent } from "./app.component";
-import { DemoComponent } from "./demo/demo.component";
+import { MainComponent } from "./dashboard/main/main.component";
+import { SidebarComponent } from "./dashboard/sidebar/sidebar.component";
 import { LoginComponent } from "./authentication/login/login.component";
+import { HeaderComponent } from "./dashboard/header/header.component";
 import { SignupComponent } from "./authentication/signup/signup.component";
 import { DemoDataService } from "./demo/demo-data.service";
-import { MessageComponent } from "./message/message.component";
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { routes } from './app.routes';
 
@@ -14,10 +15,11 @@ import { routes } from './app.routes';
   // Components, Pipes, Directive
   declarations: [
     AppComponent,
-    MessageComponent,
-    DemoComponent,
+    MainComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    SidebarComponent,
+    HeaderComponent
   ],
   // Entry Components
   entryComponents: [
@@ -32,6 +34,7 @@ import { routes } from './app.routes';
 
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   // Main Component
