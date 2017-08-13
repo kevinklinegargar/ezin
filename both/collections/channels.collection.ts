@@ -3,11 +3,11 @@ import { Meteor } from 'meteor/meteor';
 
 import { Channel } from '../models/channel.model';
 
-export const Parties = new MongoObservable.Collection<Channel>('channel');
+export const Channels = new MongoObservable.Collection<Channel>('channel');
 
-function loggedIn() {
-  return !!Meteor.user();
-}
+//function loggedIn() {
+ // return !!Meteor.user();
+//}
 
 // Parties.allow({
 //     insert: loggedIn,

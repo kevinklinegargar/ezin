@@ -1,5 +1,5 @@
 import { Component, OnInit,TemplateRef } from "@angular/core";
-import { Demo } from "../../../../../both/models/demo.model";
+
 import template from "./header.component.html";
 
 
