@@ -8,7 +8,9 @@ Meteor.methods({
 
     
         Channels.insert({ name: name });
+ 
 
+       
         return true;
     }
 

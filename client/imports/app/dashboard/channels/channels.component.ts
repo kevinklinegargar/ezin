@@ -29,8 +29,8 @@ export class ChannelsComponent implements OnInit,AfterViewInit {
 
 	ngOnInit() {
 		
-		MeteorObservable.subscribe('channels');
-		 
+		MeteorObservable.subscribe('channels').subscribe();
+		
 	
 	}
 	ngAfterViewInit(){
@@ -39,10 +39,11 @@ export class ChannelsComponent implements OnInit,AfterViewInit {
 	}
 	addChannel(event){
 
-	console.log(Channels.find({}).fetch());
+
 
 		MeteorObservable.call('channels.create', "test channel").subscribe(() => {
 			alert('User successfully created the channel.');
+			//console.log(Channels.find({}).fetch());
 		}, (error) => {
 			alert(`Failed to invite due to ${error}`);
 		});

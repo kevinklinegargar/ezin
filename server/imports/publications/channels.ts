@@ -5,7 +5,11 @@ import { Channels } from '../../../both/collections/channels.collection';
 
 
 
-Meteor.publish('channels', function(name: string) {
+Meteor.publish('channels', function() {
 
+    console.log(Channels.find({}).fetch());
     return Channels.find({});
+
 });
+
+
